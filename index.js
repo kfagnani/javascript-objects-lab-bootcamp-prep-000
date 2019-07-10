@@ -15,11 +15,13 @@ return object
 }
 
 function deleteFromObjectByKey (object,key) {
-  delete object [key]
+  Object.assign({},object,[key])
+
   return object
+  
 }
 
 function destructivelyDeleteFromObjectByKey (object,key) {
-  Object.assign({},object,{key})
+  
   return delete object [key]
 }
